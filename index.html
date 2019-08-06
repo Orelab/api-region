@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>demo Vue</title>
+        <meta charset="utf-8" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+
+
+        <div id="app" class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-6" v-if="regions.length > 0">
+
+                    <h3>Région</h3>
+                    <select class="form-control" v-on:change="openDepartments">
+                        <option v-for="r in regions" v-bind:value="r.code">{{ r.nom }}</option>
+                    </select>
+        
+                    <h3>Département</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item" v-for="d in departements"
+                            v-on:click="openCommunes(d)">{{ d.code }} - {{ d.nom }}</li>
+                    </ul>
+                </div>
+        
+                <div class="col-md-6" v-if="communes.length > 0">
+                    <h3>Communes</h3>
+                    <ul class="list-group">
+                        <geo-list 
+                            v-for="c in communes"
+                            v-bind:name="c.codesPostaux[0] +' - '+ c.nom" 
+                        ></geo-list>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
+        <style>
+            body {
+                background-color: #EBEBEB;
+            }
+            li {
+                cursor: pointer;
+            }
+        </style>
+
+
+        <script src="dist/bundle.js"></script>
+
+        <script>
+        console.log($);
+        console.log(jQuery);
+        console.log($);
+        </script>
+    </body>
+</html>
