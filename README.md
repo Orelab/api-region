@@ -3,6 +3,8 @@
 
 This is a Webpack boilerplate which connects to a french Open Data API about regions, departements and postcodes, with VueJS.
 
+[A live demo here](https://orelab.github.io/api-region/)
+
 # Exercice
 
 Build an application which allow to navigate in region list.
