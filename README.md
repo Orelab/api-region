@@ -3,6 +3,16 @@
 
 A Webpack boilerplate which connects to FR Open Data about regions, departements and postcodes, with VueJS
 
+# Compile
+
+git clone git@github.com:Orelab/api-region.git
+cd api-region
+npm install
+npm run build
+
+# Run
+
+Just open the file index.html in your favorite browser !
 
 # Ressources
 
